@@ -28,6 +28,9 @@ import java.util.List;
  * THE SOFTWARE.
  */
 
+/**
+ * @author RakeyJakey (Jake Arnold)
+ */
 public final class Maths {
 
     private Maths() {

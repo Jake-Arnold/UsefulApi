@@ -30,6 +30,9 @@ import java.util.List;
  * THE SOFTWARE.
  */
 
+/**
+ * @author RakeyJakey (Jake Arnold)
+ */
 public class Random {
 
     private final static java.util.Random random = new java.util.Random();
