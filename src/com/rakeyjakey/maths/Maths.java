@@ -36,6 +36,7 @@ public final class Maths {
 
     /**
      * Checks if the given integer is even.
+     *
      * @param i integer to check if even.
      * @return true if integer given is even.
      */
@@ -46,6 +47,7 @@ public final class Maths {
 
     /**
      * Checks if the given double is a whole number.
+     *
      * @param i double to check if whole.
      * @return true if integer given is a whole number (integer).
      */
@@ -56,11 +58,15 @@ public final class Maths {
 
     /**
      * Checks if the given long is prime.
+     *
      * @param l integer to check if prime.
      * @return true if integer given prime.
      */
 
     public static boolean isPrime(long l) {
+
+        if (l < 2)
+            return false;
 
         for (long i = 2; i < l - 1; i++) {
             if (l % i == 0)
@@ -72,6 +78,7 @@ public final class Maths {
 
     /**
      * Checks if the given integer is a square number.
+     *
      * @param i integer to check if square number.
      * @return true if integer given is a square number.
      */
@@ -81,8 +88,8 @@ public final class Maths {
     }
 
     /**
-     *       Checks if the given integer is a cube number.
-
+     * Checks if the given integer is a cube number.
+     *
      * @param i integer to check if cube number.
      * @return true if integer given is a cube number.
      */
@@ -92,6 +99,7 @@ public final class Maths {
 
     /**
      * Checks if integer i is a multiple of integer j.
+     *
      * @param i integer that we will be checking the multiple of.
      * @param j integer to check if is a multiple of i.
      * @return true if integer j is a multple of integer i.
@@ -102,6 +110,7 @@ public final class Maths {
 
     /**
      * Returns the fibonacci number at the term given.
+     *
      * @param term the nth term of the sequence that you with to output.
      * @return the fibonacci number located at the nth term.
      */
@@ -125,6 +134,7 @@ public final class Maths {
 
     /**
      * Checks if the given integer is a palindromic number.
+     *
      * @param i the integer to check.
      * @return true if the integer is a palindromic number.
      */
@@ -156,6 +166,7 @@ public final class Maths {
 
     /**
      * Checks if the integers given are evenly divisible by the divisor given.
+     *
      * @param divisor  the integer to use as the divisor.
      * @param integers the integers that you wish to check are evenly divisible by
      *                 the divisor.
@@ -176,6 +187,7 @@ public final class Maths {
 
     /**
      * Checks how many digits are in the integer provided.
+     *
      * @param i The integer to be checked.
      * @return Returns the number of digits of the integer given.
      */
@@ -265,4 +277,31 @@ public final class Maths {
         return i > j ? i - j : j - i;
     }
 
+    /**
+     * Gets the prime number at the term specified.
+     *
+     * @param term the term of the prime number that you wish to get. Eg. 6 would return 13 as it is the 6th prime number.
+     * @return the prime number at the term specified.
+     * @throws java.lang.IllegalArgumentException if the term is less than 1. You cannot have a 0th term or a negative term.
+     */
+    public static int primeFromTerm(int term) {
+
+        if (term < 1)
+            throw new IllegalArgumentException("The term must be greater or equal to 1");
+
+        int currentTerm = 0;
+
+        for (int i = 0; true; i++) {
+
+            if (Maths.isPrime(i)) {
+                currentTerm++;
+
+                if (currentTerm == term)
+                    return i;
+
+            } else
+                continue;
+
+        }
+    }
 }

@@ -63,7 +63,7 @@ public class Random {
     /**
      * @param digits The number of digits you wish the random number to have.
      * @return Returns a random number with the specified amount of digits.
-     * @throws IllegalArgumentException if digits <= 0.
+     * @throws IllegalArgumentException if digits less than or equal to 0.
      */
     public static int nextInt(int digits) {
 
